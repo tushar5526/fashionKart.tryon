@@ -467,12 +467,11 @@ function selectOption(e) {
 const modelOptions = document.querySelectorAll(".modelOption");
 
 for (const option of modelOptions) {
-  option.addEventListener("click", selectOption);
+  option.addEventListener("click", selectOptionModel);
 }
 
-function selectOption(e) {
+function selectOptionModel(e) {
   let option = e.target;
-  activeOption = e.target.dataset.option;
   for (const otherOption of modelOptions) {
     otherOption.classList.remove("--is-active");
   }
