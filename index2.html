@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Shirt Viewer</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style2.css" />
+    <style>
+        .loading {
+            position: fixed;
+            z-index: 50;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: #f1f1f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loader {
+            -webkit-perspective: 120px;
+            -moz-perspective: 120px;
+            -ms-perspective: 120px;
+            perspective: 120px;
+            width: 100px;
+            height: 100px;
+        }
+
+        .loader::before {
+            content: "";
+            position: absolute;
+            left: 25px;
+            top: 25px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff0000;
+            animation: flip 1s infinite;
+        }
+
+        @keyframes flip {
+            0% {
+                transform: rotate(0);
+            }
+
+            50% {
+                transform: rotateY(180deg);
+            }
+
+            100% {
+                transform: rotateY(180deg) rotateX(180deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="logo"><img src="logo.png"></div>
+    <input type="file" id="real-file" onchange="loadFile(event)" hidden="hidden" />
+    <div class="loading" id="js-loader">
+        <div class="loader"></div>
+    </div>
+    <span class="drag-notice" id="js-drag-notice">Drag to rotate 360&#176;</span>
+    <div class="options">
+        <div class="option --is-active" data-option="shirt">
+            <img src="shirtBlack.png" alt="" />
+        </div>
+        <div class="option" data-option="pant">
+            <img src="pants.png" alt="" />
+        </div>
+        <div class="option" data-option="shoes">
+            <img src="shoes.png" alt="" />
+        </div>
+        <div class="option" data-option="front">
+            <img src="front.png" alt="" />
+        </div>
+        <div class="input" id="custom-button">
+            <img src="plus.png"><div style="padding-left: 18px;">Add Custom Texture</div>
+        </div>
+    </div>
+    <canvas id="c"></canvas>
+    <div class="controls">
+        <div class="info">
+            <div class="info__message">
+                <p><strong>&nbsp;Grab&nbsp;</strong> to rotate chair. <strong>&nbsp;Scroll&nbsp;</strong> to zoom.
+                    <strong>&nbsp;Drag&nbsp;</strong> swatches to view more.</p>
+            </div>
+        </div>
+        <div id="js-tray" class="tray">
+            <div id="js-tray-slide" class="tray__slide"></div>
+        </div>
+    </div>
+    
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/three.js/108/three.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/gh/mrdoob/three.js@r92/examples/js/loaders/GLTFLoader.js'></script>
+    <script src='https://threejs.org/examples/js/controls/OrbitControls.js'></script>
+    <script src="script2.js"></script>
+</body>
+
+</html>
