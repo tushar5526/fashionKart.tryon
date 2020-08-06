@@ -90,6 +90,10 @@ html {
     pointer-events: none;
 }
 
+.input div{
+    padding-left: 18px;
+}
+
 .controls {
     position: absolute;
     bottom: 0;
@@ -273,9 +277,6 @@ html {
 }
 
 @media (max-width: 960px) {
-    .options {
-        top: 0;
-    }
 
     .info {
         padding: 0 1em 1em 0;
@@ -318,16 +319,21 @@ html {
 }
 
 @media (max-width: 680px) {
+    .logo{
+        margin: 0 auto;
+        right: auto;
+    }
+    
+    .logo  img{
+        width: 300px;
+        height: 100px;
+    }
     .info {
         padding: 1em 2em;
     }
 
     .info__message {
         display: none;
-    }
-
-    .options {
-        bottom: 50px;
     }
 
     .option {
@@ -347,6 +353,25 @@ html {
         height: 100%;
         width: auto;
         pointer-events: none;
+    }
+
+    .input {
+        margin-bottom: 1px;
+        padding: 5px;
+        height: 45px;
+        width: 45px;
+        display: flex;
+    }
+
+    .input img {
+        height: 100%;
+        width: auto;
+        pointer-events: none;
+
+    }
+
+    .input div{
+        padding-left: 10px;
     }
 }
 

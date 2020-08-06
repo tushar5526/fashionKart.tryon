@@ -137,7 +137,6 @@ const colors = [
   {
     color: "F2DABA",
   },
-  /*
   {
     color: "F2A97F",
   },
@@ -241,7 +240,6 @@ const colors = [
   {
     color: "438AAC",
   },
-  */
 ];
 
 const BACKGROUND_COLOR = 0xf1f1f1;
@@ -617,7 +615,8 @@ var loadFile = function (event) {
   }
 
   swatch.setAttribute("data-key", colors.length);
-  TRAY.append(swatch);
+  var before = TRAY.firstChild;
+  TRAY.insertBefore(swatch, before);
 
   swatch.addEventListener("click", selectSwatch);
 
