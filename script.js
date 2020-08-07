@@ -6,7 +6,7 @@ const DRAG_NOTICE = document.getElementById("js-drag-notice");
 var theModel;
 
 //change to humanModelNew.glb for male 3d model
-const MODEL_PATH = ["humanModelNew.glb", "humanFemale.glb"];
+const MODEL_PATH = ["humanModelNew.glb", "humanFemale.glb", "humanFemaleNew.glb"];
 
 var activeOption = "shirt";
 var loaded = false;
@@ -339,6 +339,7 @@ const INITIAL_MAP = [
   { childID: "shoes", mtl: INITIAL_MTL },
   { childID: "front", mtl: INITIAL_MTL },
   { childID: "head", mtl: INITIAL_MTL },
+  { childID: "hand", mtl: INITIAL_MTL },
 ];
 
 // Init the object loader
@@ -360,6 +361,7 @@ function loadModel(i) {
       lastLoadedModelName = "model" + i;
       theModel.traverse((o) => {
         if (o.isMesh) {
+          console.log(o.name);
           o.castShadow = true;
           o.receiveShadow = true;
         }
