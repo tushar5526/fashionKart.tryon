@@ -13,6 +13,62 @@ var loaded = false;
 
 const colors = [
   {
+    texture: "img/1.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/2.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/3.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/4.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/5.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/6.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/7.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/8.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/9.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/10.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  {
+    texture: "img/11.jpeg",
+    size: [8, 8, 8],
+    shininess: 5,
+  },
+  
+  {
     texture: "img/wood_.jpg",
     size: [2, 2, 2],
     shininess: 60,
@@ -623,7 +679,7 @@ var loadFile = function (event) {
   colors.push({
     texture: URL.createObjectURL(event.target.files[0]),
     size: [8, 8, 8],
-    shininess: 10,
+    shininess: 5,
   });
 };
 
