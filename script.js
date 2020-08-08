@@ -333,13 +333,18 @@ const INITIAL_MTL = new THREE.MeshPhongMaterial({
   shininess: 10,
 });
 
+const INITIAL_MTL_SKIN = new THREE.MeshPhongMaterial({
+  color: 0xfaeade,
+  shininess: 10,
+});
+
 const INITIAL_MAP = [
   { childID: "shirt", mtl: INITIAL_MTL },
   { childID: "pant", mtl: INITIAL_MTL },
   { childID: "shoes", mtl: INITIAL_MTL },
   { childID: "front", mtl: INITIAL_MTL },
-  { childID: "head", mtl: INITIAL_MTL },
-  { childID: "hand", mtl: INITIAL_MTL },
+  { childID: "head", mtl: INITIAL_MTL_SKIN },
+  { childID: "hand", mtl: INITIAL_MTL_SKIN },
 ];
 
 // Init the object loader
@@ -347,7 +352,6 @@ const INITIAL_MAP = [
 let lastLoadedModelName = "";
 function loadModel(i) {
   
-
   var loader = new THREE.GLTFLoader();
   loader.load(
     MODEL_PATH[i],
