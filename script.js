@@ -347,10 +347,6 @@ const INITIAL_MAP = [
 let lastLoadedModelName = "";
 function loadModel(i) {
   
-  if(lastLoadedModelName != ""){
-    var selectedObject = scene.getObjectByName(lastLoadedModelName);
-    scene.remove( selectedObject );
-  }
 
   var loader = new THREE.GLTFLoader();
   loader.load(
@@ -358,7 +354,6 @@ function loadModel(i) {
     function (gltf) {
       theModel = gltf.scene;
       theModel.name = "model" + i;
-      lastLoadedModelName = "model" + i;
       theModel.traverse((o) => {
         if (o.isMesh) {
           console.log(o.name);
@@ -379,6 +374,12 @@ function loadModel(i) {
         initColor(theModel, object.childID, object.mtl);
       }
 
+      if(lastLoadedModelName != ""){
+        var selectedObject = scene.getObjectByName(lastLoadedModelName);
+        scene.remove( selectedObject );
+      }
+      lastLoadedModelName = "model" + i;
+    
       // Add the model to the scene
       scene.add(theModel);
 
